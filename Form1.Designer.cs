@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.AddBox = new System.Windows.Forms.TextBox();
             this.AddChildButton = new System.Windows.Forms.Button();
             this.AddBeforeButton = new System.Windows.Forms.Button();
             this.AddAfterButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
-            this.Dele = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // SearchBox
@@ -90,14 +93,14 @@
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = true;
             // 
-            // Dele
+            // DeleteButton
             // 
-            this.Dele.Location = new System.Drawing.Point(1131, 49);
-            this.Dele.Name = "Dele";
-            this.Dele.Size = new System.Drawing.Size(112, 34);
-            this.Dele.TabIndex = 6;
-            this.Dele.Text = "Delete";
-            this.Dele.UseVisualStyleBackColor = true;
+            this.DeleteButton.Location = new System.Drawing.Point(1131, 49);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(112, 34);
+            this.DeleteButton.TabIndex = 6;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
             // 
             // treeView1
             // 
@@ -106,13 +109,17 @@
             this.treeView1.Size = new System.Drawing.Size(1231, 561);
             this.treeView1.TabIndex = 7;
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = this.AddBox.Controls;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1255, 662);
             this.Controls.Add(this.treeView1);
-            this.Controls.Add(this.Dele);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddAfterButton);
             this.Controls.Add(this.AddBeforeButton);
@@ -121,6 +128,7 @@
             this.Controls.Add(this.SearchBox);
             this.Name = "MainForm";
             this.Text = "Thai cooking tree info";
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,7 +142,8 @@
         private Button AddBeforeButton;
         private Button AddAfterButton;
         private Button EditButton;
-        private Button Dele;
+        private Button DeleteButton;
         private TreeView treeView1;
+        private BindingSource bindingSource1;
     }
 }
