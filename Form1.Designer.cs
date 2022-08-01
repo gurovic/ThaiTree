@@ -1,6 +1,6 @@
 ﻿namespace ThaiTree
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -42,6 +42,7 @@
             // 
             this.SearchBox.Location = new System.Drawing.Point(12, 12);
             this.SearchBox.Name = "SearchBox";
+            this.SearchBox.PlaceholderText = "Search...";
             this.SearchBox.Size = new System.Drawing.Size(1231, 31);
             this.SearchBox.TabIndex = 0;
             // 
@@ -49,6 +50,7 @@
             // 
             this.AddBox.Location = new System.Drawing.Point(12, 52);
             this.AddBox.Name = "AddBox";
+            this.AddBox.PlaceholderText = "Node text";
             this.AddBox.Size = new System.Drawing.Size(641, 31);
             this.AddBox.TabIndex = 1;
             // 
@@ -104,7 +106,7 @@
             this.treeView1.Size = new System.Drawing.Size(1231, 561);
             this.treeView1.TabIndex = 7;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,8 +119,8 @@
             this.Controls.Add(this.AddChildButton);
             this.Controls.Add(this.AddBox);
             this.Controls.Add(this.SearchBox);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.Text = "Thai cooking tree info";
             this.ResumeLayout(false);
             this.PerformLayout();
 
