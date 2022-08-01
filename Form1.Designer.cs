@@ -38,7 +38,12 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet11 = new ThaiTree.DataSet1();
+            this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemsTableAdapter = new ThaiTree.DataSet1TableAdapters.itemsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // SearchBox
@@ -113,6 +118,21 @@
             // 
             this.bindingSource1.DataSource = this.AddBox.Controls;
             // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.Namespace = "http://tempuri.org/DataSet1.xsd";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // itemsBindingSource
+            // 
+            this.itemsBindingSource.DataMember = "items";
+            this.itemsBindingSource.DataSource = this.dataSet11;
+            // 
+            // itemsTableAdapter
+            // 
+            this.itemsTableAdapter.ClearBeforeFill = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -128,7 +148,10 @@
             this.Controls.Add(this.SearchBox);
             this.Name = "MainForm";
             this.Text = "Thai cooking tree info";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +168,8 @@
         private Button DeleteButton;
         private TreeView treeView1;
         private BindingSource bindingSource1;
+        private DataSet1 dataSet11;
+        private BindingSource itemsBindingSource;
+        private DataSet1TableAdapters.itemsTableAdapter itemsTableAdapter;
     }
 }
