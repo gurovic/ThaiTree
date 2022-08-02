@@ -18,7 +18,8 @@ namespace ThaiTree
             treeView1.Nodes.Clear();
             foreach (var item in data)
             {
-                Console.WriteLine(item["Id"] + " " + item["parent"]);
+                Console.WriteLine(item["Id"] + "---" + item["parent"]);
+                Console.WriteLine();
                 if (item["Id"].ToString() == item["parent"].ToString())
                 {
                     treeView1.Nodes.Add(item["Id"].ToString(), item["text"].ToString());
