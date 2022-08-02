@@ -37,11 +37,9 @@
             this.EditButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new ThaiTree.DataSet1();
             this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemsTableAdapter = new ThaiTree.DataSet1TableAdapters.itemsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -118,10 +116,6 @@
             this.treeView1.Size = new System.Drawing.Size(1231, 561);
             this.treeView1.TabIndex = 7;
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = this.AddBox.Controls;
-            // 
             // dataSet11
             // 
             this.dataSet11.DataSetName = "DataSet1";
@@ -132,6 +126,7 @@
             // 
             this.itemsBindingSource.DataMember = "items";
             this.itemsBindingSource.DataSource = this.dataSet11;
+            this.itemsBindingSource.CurrentChanged += new System.EventHandler(this.itemsBindingSource_CurrentChanged);
             // 
             // itemsTableAdapter
             // 
@@ -153,7 +148,6 @@
             this.Name = "MainForm";
             this.Text = "Thai cooking tree info";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).EndInit();
             this.ResumeLayout(false);

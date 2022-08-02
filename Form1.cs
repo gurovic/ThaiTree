@@ -67,7 +67,7 @@ namespace ThaiTree
                 parentId = getId(parent);
             }
             TreeNode newNode = new TreeNode(text);
-            var id = itemsTableAdapter.Insert(text, parentId, order, 0);
+            var id = itemsTableAdapter.InsertQuery(text, parentId, order);
             newNode.Tag = order.ToString();
             newNode.Name = id.ToString();
             if (index < 0)
@@ -191,6 +191,11 @@ namespace ThaiTree
                         treeView1.Nodes.Find(item["parent"].ToString(), true)[0].LastNode.Text);
                 }
             }
+
+        }
+
+        private void itemsBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
 
         }
     }
