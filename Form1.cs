@@ -176,19 +176,13 @@ namespace ThaiTree
                 Console.WriteLine();
                 if (item["Id"].ToString() == item["parent"].ToString())
                 {
-                    treeView1.Nodes.Add(item["Id"].ToString(), item["text"].ToString());
+                    treeView1.Nodes.Add(item["Id"].ToString(), item["text"].ToString().Trim());
                     treeView1.Nodes[^1].Tag = item["order"].ToString();
-                    Console.WriteLine(treeView1.Nodes[^1].Tag +
-                        treeView1.Nodes[^1].Name +
-                        treeView1.Nodes[^1].Text);
                 }
                 else
                 {
-                    treeView1.Nodes.Find(item["parent"].ToString(), true)[0].Nodes.Add(item["Id"].ToString(), item["text"].ToString());
+                    treeView1.Nodes.Find(item["parent"].ToString(), true)[0].Nodes.Add(item["Id"].ToString(), item["text"].ToString().Trim());
                     treeView1.Nodes.Find(item["parent"].ToString(), true)[0].LastNode.Tag = item["order"].ToString();
-                    Console.WriteLine(treeView1.Nodes.Find(item["parent"].ToString(), true)[0].LastNode.Tag +
-                        treeView1.Nodes.Find(item["parent"].ToString(), true)[0].LastNode.Name +
-                        treeView1.Nodes.Find(item["parent"].ToString(), true)[0].LastNode.Text);
                 }
             }
 
