@@ -70,6 +70,7 @@
             this.AddChildButton.TabIndex = 2;
             this.AddChildButton.Text = "Add child";
             this.AddChildButton.UseVisualStyleBackColor = true;
+            this.AddChildButton.Click += new System.EventHandler(this.AddChildButton_Click);
             // 
             // AddBeforeButton
             // 
@@ -79,6 +80,7 @@
             this.AddBeforeButton.TabIndex = 3;
             this.AddBeforeButton.Text = "Add before";
             this.AddBeforeButton.UseVisualStyleBackColor = true;
+            this.AddBeforeButton.Click += new System.EventHandler(this.AddBeforeButton_Click);
             // 
             // AddAfterButton
             // 
@@ -88,6 +90,7 @@
             this.AddAfterButton.TabIndex = 4;
             this.AddAfterButton.Text = "Add after";
             this.AddAfterButton.UseVisualStyleBackColor = true;
+            this.AddAfterButton.Click += new System.EventHandler(this.AddAfterButton_Click);
             // 
             // EditButton
             // 
@@ -106,6 +109,7 @@
             this.DeleteButton.TabIndex = 6;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // treeView1
             // 
