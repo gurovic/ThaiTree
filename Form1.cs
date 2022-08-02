@@ -198,6 +198,23 @@ namespace ThaiTree
             treeView1.SelectedNode.Text = AddBox.Text;
             itemsTableAdapter.UpdateQuery(AddBox.Text, GetId(treeView1.SelectedNode));
         }
+    
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (treeView1.SelectedNode.Nodes.Count > 0)
+            {
+                AddChildButton.Enabled = false;
+                DeleteButton.Enabled = false;
+            }
+            else
+            {
+                AddChildButton.Enabled = true;
+                DeleteButton.Enabled = true;
+            }
+
+        }
     }
+
 }
 
