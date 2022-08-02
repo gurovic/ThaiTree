@@ -192,6 +192,12 @@ namespace ThaiTree
         {
 
         }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            treeView1.SelectedNode.Text = AddBox.Text;
+            itemsTableAdapter.UpdateQuery(AddBox.Text, GetId(treeView1.SelectedNode));
+        }
     }
 }
 
