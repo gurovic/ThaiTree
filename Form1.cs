@@ -10,27 +10,27 @@ namespace ThaiTree
             InitializeComponent();
         }
 
-        private double getOrder(TreeNode node)
+        static private double GetOrder(TreeNode node)
         {
             return (double.Parse(node.Tag.ToString()));
         }
 
-        private int getId(TreeNode node)
+        static private int GetId(TreeNode node)
         {
             //Console.WriteLine(node.Name);
             return int.Parse(node.Name);
         }
 
 
-        private void buttonDelete_Click(object sender, EventArgs e)
+        private void ButtonDelete_Click(object sender, EventArgs e)
         {
-            itemsTableAdapter.Delete(getId(treeView1.SelectedNode));
+            itemsTableAdapter.Delete(GetId(treeView1.SelectedNode));
             treeView1.SelectedNode.Remove();
         }
 
-        private void add_node(TreeNode parent, string text, int index)
+        private void Add_node(TreeNode parent, string text, int index)
         {
-            double order = 0;
+            double order;
             if (index < 0)
             {
                 order = 100;
@@ -39,19 +39,19 @@ namespace ThaiTree
             {
                 if (index == 0)
                 {
-                    order = getOrder(parent.FirstNode) / 2.0;
+                    order = GetOrder(parent.FirstNode) / 2.0;
                 }
                 else
                 {
                     if (index == parent.Nodes.Count)
                     {
-                        order = getOrder(parent.LastNode) + 100;
+                        order = GetOrder(parent.LastNode) + 100;
                     }
                     else
                     {
 
 
-                        order = (getOrder(parent.Nodes[index - 1]) + getOrder(parent.Nodes[index])) / 2;
+                        order = (GetOrder(parent.Nodes[index - 1]) + GetOrder(parent.Nodes[index])) / 2;
                     }
                 }
             }
@@ -64,9 +64,9 @@ namespace ThaiTree
 
             if (parent != null)
             {
-                parentId = getId(parent);
+                parentId = GetId(parent);
             }
-            TreeNode newNode = new TreeNode(text);
+            TreeNode newNode = new(text);
             var id = itemsTableAdapter.InsertQuery(text, parentId, order);
             newNode.Tag = order.ToString();
             newNode.Name = id.ToString();
@@ -87,7 +87,7 @@ namespace ThaiTree
             {
                 if (treeView1.SelectedNode != null)
                 {
-                    add_node(treeView1.SelectedNode, AddBox.Text, -1);
+                    Add_node(treeView1.SelectedNode, AddBox.Text, -1);
                 }
             }
 
@@ -97,7 +97,7 @@ namespace ThaiTree
         {
             if (treeView1.SelectedNode.Parent != null)
             {
-                add_node(treeView1.SelectedNode.Parent, AddBox.Text, treeView1.SelectedNode.Index);
+                Add_node(treeView1.SelectedNode.Parent, AddBox.Text, treeView1.SelectedNode.Index);
             }
         }
 
@@ -105,7 +105,7 @@ namespace ThaiTree
         {
             if (treeView1.SelectedNode.Parent != null)
             {
-                add_node(treeView1.SelectedNode.Parent, AddBox.Text, treeView1.SelectedNode.Index + 1);
+                Add_node(treeView1.SelectedNode.Parent, AddBox.Text, treeView1.SelectedNode.Index + 1);
             }
 
         }
@@ -142,7 +142,7 @@ namespace ThaiTree
             }
         }
 
-        private void treeView1_Leave(object sender, EventArgs e)
+        private void TreeView1_Leave(object sender, EventArgs e)
         {
             if (treeView1.SelectedNode != null)
             {
@@ -150,7 +150,7 @@ namespace ThaiTree
             }
         }
 
-        private void treeView1_Enter(object sender, EventArgs e)
+        private void TreeView1_Enter(object sender, EventArgs e)
         {
             if (treeView1.SelectedNode == null)
             {
@@ -177,10 +177,10 @@ namespace ThaiTree
                 if (item["Id"].ToString() == item["parent"].ToString())
                 {
                     treeView1.Nodes.Add(item["Id"].ToString(), item["text"].ToString());
-                    treeView1.Nodes[treeView1.Nodes.Count - 1].Tag = item["order"].ToString();
-                    Console.WriteLine(treeView1.Nodes[treeView1.Nodes.Count - 1].Tag + 
-                        treeView1.Nodes[treeView1.Nodes.Count - 1].Name +
-                        treeView1.Nodes[treeView1.Nodes.Count - 1].Text);
+                    treeView1.Nodes[^1].Tag = item["order"].ToString();
+                    Console.WriteLine(treeView1.Nodes[^1].Tag +
+                        treeView1.Nodes[^1].Name +
+                        treeView1.Nodes[^1].Text);
                 }
                 else
                 {
@@ -194,7 +194,7 @@ namespace ThaiTree
 
         }
 
-        private void itemsBindingSource_CurrentChanged(object sender, EventArgs e)
+        private void ItemsBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
         }

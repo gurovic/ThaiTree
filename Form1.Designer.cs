@@ -107,7 +107,7 @@
             this.DeleteButton.TabIndex = 6;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.buttonDelete_Click);
+            this.DeleteButton.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
             // treeView1
             // 
@@ -126,7 +126,7 @@
             // 
             this.itemsBindingSource.DataMember = "items";
             this.itemsBindingSource.DataSource = this.dataSet11;
-            this.itemsBindingSource.CurrentChanged += new System.EventHandler(this.itemsBindingSource_CurrentChanged);
+            this.itemsBindingSource.CurrentChanged += new System.EventHandler(this.ItemsBindingSource_CurrentChanged);
             // 
             // itemsTableAdapter
             // 
