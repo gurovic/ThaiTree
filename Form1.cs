@@ -137,7 +137,7 @@ namespace ThaiTree
             if (node != null)
             {
                 treeView1.SelectedNode = node;
-                treeView1.Focus();
+                SearchBox.Focus();
 
             }
         }
@@ -196,6 +196,7 @@ namespace ThaiTree
             }
 
         }
+
     }
 
 }

@@ -51,6 +51,7 @@
             this.SearchBox.PlaceholderText = "Search...";
             this.SearchBox.Size = new System.Drawing.Size(1231, 31);
             this.SearchBox.TabIndex = 0;
+            this.SearchBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Search_KeyUp);
             // 
             // AddBox
             // 
