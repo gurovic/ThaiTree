@@ -28,7 +28,7 @@ namespace ThaiTree
             treeView1.SelectedNode.Remove();
         }
 
-        private void Add_node(TreeNode parent, string text, int index)
+        private void AddNode(TreeNode parent, string text, int index)
         {
             double order;
             if (index < 0)
@@ -87,7 +87,7 @@ namespace ThaiTree
             {
                 if (treeView1.SelectedNode != null)
                 {
-                    Add_node(treeView1.SelectedNode, AddBox.Text, -1);
+                    AddNode(treeView1.SelectedNode, AddBox.Text, -1);
                 }
             }
 
@@ -97,7 +97,7 @@ namespace ThaiTree
         {
             if (treeView1.SelectedNode.Parent != null)
             {
-                Add_node(treeView1.SelectedNode.Parent, AddBox.Text, treeView1.SelectedNode.Index);
+                AddNode(treeView1.SelectedNode.Parent, AddBox.Text, treeView1.SelectedNode.Index);
             }
         }
 
@@ -105,7 +105,7 @@ namespace ThaiTree
         {
             if (treeView1.SelectedNode.Parent != null)
             {
-                Add_node(treeView1.SelectedNode.Parent, AddBox.Text, treeView1.SelectedNode.Index + 1);
+                AddNode(treeView1.SelectedNode.Parent, AddBox.Text, treeView1.SelectedNode.Index + 1);
             }
 
         }
@@ -152,16 +152,7 @@ namespace ThaiTree
 
         private void TreeView1_Enter(object sender, EventArgs e)
         {
-            if (treeView1.SelectedNode == null)
-            {
-                treeView1.SelectedNode = treeView1.TopNode;
-            }
 
-            if (treeView1.SelectedNode != null)
-            {
-                treeView1.SelectedNode.BackColor = Color.White;
-
-            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -200,7 +191,7 @@ namespace ThaiTree
         }
     
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (treeView1.SelectedNode.Nodes.Count > 0)
             {
