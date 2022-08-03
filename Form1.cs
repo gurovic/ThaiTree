@@ -150,10 +150,6 @@ namespace ThaiTree
             }
         }
 
-        private void TreeView1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -176,11 +172,6 @@ namespace ThaiTree
                     treeView1.Nodes.Find(item["parent"].ToString(), true)[0].LastNode.Tag = item["order"].ToString();
                 }
             }
-
-        }
-
-        private void ItemsBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
 
         }
 

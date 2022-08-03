@@ -129,7 +129,6 @@
             // 
             this.itemsBindingSource.DataMember = "items";
             this.itemsBindingSource.DataSource = this.dataSet11;
-            this.itemsBindingSource.CurrentChanged += new System.EventHandler(this.ItemsBindingSource_CurrentChanged);
             // 
             // itemsTableAdapter
             // 
