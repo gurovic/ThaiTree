@@ -78,7 +78,7 @@ namespace ThaiTree
             {
                 parent.Nodes.Insert(index, newNode);
             }
-            Console.WriteLine(newNode.Tag + " " + newNode.Text + " " + newNode.Name);
+            treeView1.SelectedNode = newNode;
         }
 
         private void AddChildButton_Click(object sender, EventArgs e)
