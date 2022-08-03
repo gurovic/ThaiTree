@@ -203,6 +203,21 @@ namespace ThaiTree
         {
             AddBox.Text = treeView1.SelectedNode.Text;
         }
+
+        private void AddBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if(AddChildButton.Enabled)
+                {
+                    AddChildButton_Click(sender, e);
+                }
+                else
+                {
+                    AddAfterButton_Click(sender, e);
+                }
+            }
+        }
     }
 
 }

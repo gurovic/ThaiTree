@@ -60,6 +60,7 @@
             this.AddBox.PlaceholderText = "Node text";
             this.AddBox.Size = new System.Drawing.Size(641, 31);
             this.AddBox.TabIndex = 1;
+            this.AddBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddBox_KeyDown);
             // 
             // AddChildButton
             // 
