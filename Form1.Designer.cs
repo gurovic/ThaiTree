@@ -119,6 +119,7 @@
             this.treeView1.Size = new System.Drawing.Size(1231, 561);
             this.treeView1.TabIndex = 7;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView1_AfterSelect);
+            this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
             // 
             // dataSet11
             // 

@@ -199,6 +199,10 @@ namespace ThaiTree
 
         }
 
+        private void treeView1_DoubleClick(object sender, EventArgs e)
+        {
+            AddBox.Text = treeView1.SelectedNode.Text;
+        }
     }
 
 }
