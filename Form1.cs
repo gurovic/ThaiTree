@@ -208,7 +208,7 @@ namespace ThaiTree
         {
             if(e.KeyCode == Keys.Enter)
             {
-                if(AddChildButton.Enabled)
+                if (e.Shift)
                 {
                     AddChildButton_Click(sender, e);
                 }
