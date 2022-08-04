@@ -915,9 +915,9 @@ SELECT Id, text, parent, [order] FROM items WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=C:\\USERS\\VLADIMIR.GUROVIC\\DOCU" +
-                "MENTS\\THAITREE.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;Tru" +
-                "stServerCertificate=False";
+            this._connection.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\vladimir.gurovic\\Yan" +
+                "dexDisk-vladimir.gurovic@letovo.ru\\ThaiTreeDB\\thaitree.mdf;Integrated Security=T" +
+                "rue;Connect Timeout=30";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
